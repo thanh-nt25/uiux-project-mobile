@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Platform, SafeAreaView, Text } from 'react-native';
 
-export default function HomeScreen() {
+export default function OverviewScreen() {
   return (
     <SafeAreaView style={styles.container}>
-        <Text style={styles.text}>Home</Text>
+        <Text style={styles.text}>Overview</Text>
     </SafeAreaView>
   );
 }
