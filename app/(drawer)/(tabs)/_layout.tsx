@@ -49,16 +49,6 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="contact"
-        options={{
-          headerTitle: () => <LogoTitle/>,
-          title: 'Liên lạc',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'chatbox' : 'chatbox-outline'} color={color} />
-          ),
-        }}
-      />
 
       <Tabs.Screen
         name="notification"
@@ -74,3 +64,14 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+{/* <Tabs.Screen
+name="contact"
+options={{
+  headerTitle: () => <LogoTitle/>,
+  title: 'Liên lạc',
+  tabBarIcon: ({ color, focused }) => (
+    <TabBarIcon name={focused ? 'chatbox' : 'chatbox-outline'} color={color} />
+  ),
+}}
+/> */}

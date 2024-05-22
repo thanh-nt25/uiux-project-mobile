@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Platform, SafeAreaView, Text } from 'react-native';
-
+import { Card } from 'react-native-elements';
 export default function OverviewScreen() {
   return (
     <SafeAreaView style={styles.container}>
@@ -18,3 +18,4 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
+
