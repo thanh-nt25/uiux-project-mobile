@@ -24,6 +24,7 @@ function useProtectedRoute(user: User | null) {
 
     if (!user && inAuthGroup) {
       router.replace("/login");
+      // router.replace("/(drawer)/(tabs)/(toptabs)");
     } else if (user && !inAuthGroup) {
       // router.replace("/(auth)/(tabs)/");
       router.replace("/(drawer)/(tabs)/");

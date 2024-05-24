@@ -1,24 +1,39 @@
-import { Tabs } from 'expo-router';
+import { Tabs, router } from 'expo-router';
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Button } from 'react-native';
 import { DrawerToggleButton } from '@react-navigation/drawer';
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Stack } from 'expo-router';
 
 function LogoTitle() {
-  return(
-    <Image style={{ width: 130, height: 70 }} source={require('@/assets/images/logo.png')}/>
-  )
+  const colorScheme = useColorScheme();
+  if (colorScheme == 'dark'){
+    return (
+      <Image style={{ width: 130, height: 70 }} source={require('@/assets/images/logodark.png')}/>
+    )
+  }
+    
+  else{
+    return(
+      <Image style={{ width: 130, height: 70 }} source={require('@/assets/images/logo.png')}/>
+    )
+  }
+  
 }
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs
-    screenOptions={{headerLeft: () => <DrawerToggleButton tintColor='#007AFF' />}}>
+    
+      <Tabs
+      screenOptions={{
+        headerLeft: () => <DrawerToggleButton tintColor='#007AFF' />
+        
+      }}>
       <Tabs.Screen
         name="(toptabs)"
         options={{ 
@@ -61,7 +76,9 @@ export default function TabLayout() {
         }}
       />
 
-    </Tabs>
+      </Tabs>
+    
+    
   );
 }
 

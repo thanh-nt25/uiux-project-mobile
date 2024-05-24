@@ -6,6 +6,7 @@ import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { useEffect } from 'react';
 import { useAuth } from '@/context/AuthProvider';
+import { Stack } from 'expo-router';
 
 interface CustomDrawerContentProps {}
 
@@ -67,6 +68,7 @@ const CustomDrawerContent: React.FC<CustomDrawerContentProps> = (props) => {
 
 export default function DrawerLayout() {
     return(
+        
         <Drawer drawerContent={(props) => <CustomDrawerContent {...props} />}  screenOptions = {{headerShown: false}}>
             <Drawer.Screen name="setting" options={{headerShown: true}} />
         </Drawer>

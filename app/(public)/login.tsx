@@ -6,12 +6,19 @@ import { Link, usePathname } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthProvider';
+import { ScrollView } from 'react-native-gesture-handler';
+import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function login() {
   const [username, setUsername] = useState('');``
   const [password, setPassword] = useState('');
 
   const pathname = usePathname();
+  const colorScheme = useColorScheme();
+
+  const logoSource = colorScheme === 'dark'
+    ? require('@/assets/images/logodark.png')
+    : require('@/assets/images/logo.png');
 
     useEffect(() => {
         console.log(pathname);
@@ -19,16 +26,19 @@ export default function login() {
 
   const { login } = useAuth();
   
+  // sua lai cho nay de bat buoc nhap du lieu
   const _login = (username: string, password: string) => {
-    if (username === "" || password === "")
-      Alert.alert("Lỗi", "Hãy nhập tên đăng nhập và mật khẩu");
-    else login(username, password);
+    login(username, password);
+    // if (username === "" || password === "")
+    //   Alert.alert("Lỗi", "Hãy nhập tên đăng nhập và mật khẩu");
+    // else login(username, password);
   };
 
   return (
     <SafeAreaView style={styles.container}>
+      
       <View style={styles.innerContainer}>
-      <Image source={require('@/assets/images/logo.png')}
+       <Image source={logoSource}
             style={styles.logo}
           />
         <Text style={styles.title}>Đăng nhập</Text>
@@ -67,6 +77,8 @@ export default function login() {
           <Text style={styles.microsoftButtonText}>Microsoft</Text>
         </TouchableOpacity>
       </View>
+      
+      
     </SafeAreaView>
   );
 }
@@ -168,8 +180,7 @@ const styles = StyleSheet.create({
   },
   microsoftButtonText: {
     color: '#373434',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 16
   },
   separator: {
     flexDirection: 'row',
