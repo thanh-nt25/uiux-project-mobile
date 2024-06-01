@@ -4,39 +4,44 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card } from '@rneui/themed';
 import { ScrollView } from 'react-native-gesture-handler';
 
+const lineData = [{value: 65, label: '2021.2', dataPointText: '65'},
+                  {value: 50, label: '2022.1', dataPointText: '50'}, 
+                  {value: 75, label: '2022.2', dataPointText: '75'}, 
+                  {value: 90, label: '2023.1', dataPointText: '90'}
+                ];
+
 const pieData = [
-  {value: 40, color: '#306BFF', text: '54%'},
+  {value: 30, color: '#306BFF', text: '54%'},
   {value: 25, color: '#33BFFF', text: '30%'},
   {value: 15, color: '#FF54EE', text: '26%'},
-  {value: 20, color: '#C6CCD1', text: '26%'}
+  {value: 30, color: '#C6CCD1', text: '26%'}
 ];
 
-const lineData = [{value: 70, label: '2023.1', dataPointText: '70'},
-                  {value: 80, label: '2023.1', dataPointText: '80'}, 
-                  {value: 75, label: '2023.1', dataPointText: '75'}, 
-                  {value: 90, label: '2023.1', dataPointText: '90'}];
+const barData = [
+  {value: 5, label: '13', frontColor: '#306BFF', spacing: 0},
+  {value: 10, frontColor: '#33BFFF', spacing: 0},
+  {value: 0, frontColor: '#FF54EE'},
+  {value: 5, label: '14', frontColor: '#306BFF', spacing: 0},
+  {value: 5, frontColor: '#33BFFF', spacing: 0},
+  {value: 5, frontColor: '#FF54EE'},
+  {value: 10, label: '15', frontColor: '#306BFF', spacing: 0},
+  {value: 5, frontColor: '#33BFFF', spacing: 0},
+  {value: 5, frontColor: '#FF54EE'},
+  {value: 5, label: '16', frontColor: '#306BFF', spacing: 0},
+  {value: 5, frontColor: '#33BFFF', spacing: 0},
+  {value: 5, frontColor: '#FF54EE'}
 
-const barData1 = [{value: 5, label: '13'},
-                 {value: 10, label: '14'},
-                 {value: 5, label: '15'},
-                 {value: 20, label: '16'},
-                ];
-const barData2 = [{value: 5, label: '13'},
-                 {value: 10, label: '14'},
-                 {value: 0, label: '15'},
-                 {value: 0, label: '16'},
-                ];
-const barData3 = [{value: 5, label: '13'},
-                 {value: 0, label: '14'},
-                 {value: 5, label: '15'},
-                 {value: 5, label: '16'},
-                ];
+]
 
 export default function AnalyticScreen() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={{ fontSize: 18 }}>Cần 10 điểm nữa để đạt loại xếp hạng: </Text>
+        <View style={{flexDirection: 'row' }}>
+          <Text style={{ fontSize: 18 }}>Cần </Text>
+          <Text style={{ fontSize: 20, color: '#ff0000', fontWeight: 'bold', borderRadius: 10 }}>10 điểm</Text>
+          <Text style={{ fontSize: 18 }}> nữa để đạt loại xếp hạng: </Text>
+        </View>
         <Text style={{ 
           fontSize: 20,
           fontWeight: 'bold',
@@ -87,7 +92,7 @@ export default function AnalyticScreen() {
               }
               focusOnPress
               centerLabelComponent={() => (
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>80 Điểm</Text>
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>70 Điểm</Text>
               )}
             />
           </View>
@@ -98,7 +103,7 @@ export default function AnalyticScreen() {
                   <View style={[styles.colorBox, { backgroundColor: '#306BFF' }]} />
                   <Text style={styles.legendText}>Giảng dạy</Text>
                 </View>
-                <Text style={styles.legendText}>40</Text>
+                <Text style={styles.legendText}>30</Text>
               </View>
               <View style={styles.legendItem}>
                 <View style={{ flexDirection: 'row' }}>
@@ -119,11 +124,11 @@ export default function AnalyticScreen() {
                   <View style={[styles.colorBox, { backgroundColor: '#C6CCD1' }]} />
                   <Text style={styles.legendText}>Chưa đạt</Text>
                 </View>
-                <Text style={styles.legendText}>20</Text>
+                <Text style={styles.legendText}>30</Text>
               </View>
               <View style={styles.legendItem}>
-                <Card.FeaturedTitle style={{ color: '#425166' }}>Tổng</Card.FeaturedTitle>
-                <Card.FeaturedTitle style={{ color: '#425166' }}>80</Card.FeaturedTitle>
+                <Card.FeaturedTitle style={{ color: '#425166' }}>Tổng điểm đạt</Card.FeaturedTitle>
+                <Card.FeaturedTitle style={{ color: '#425166' }}>70</Card.FeaturedTitle>
               </View>
           </View>
         </Card>
@@ -133,23 +138,36 @@ export default function AnalyticScreen() {
             Chi tiết điểm của các tiêu chí
           </Card.FeaturedTitle>
           <Card.FeaturedSubtitle style={{ color: '#425166', fontSize: 16 }}>
-            Điểm của từng tiêu chí theo thời gian
+            Điểm của từng tiêu chí theo từng tuần
           </Card.FeaturedSubtitle>
-          <ScrollView horizontal> 
-            <Card containerStyle={styles.barChart}>
-              <Card.FeaturedTitle style={{ color: '#425166' }}>
-                Giảng dạy
-              </Card.FeaturedTitle>
-              <BarChart
+
+          <View style={{ width: '95%', flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10, marginBottom: 20, marginTop: 20 }}>
+            <View style={{ flexDirection:'row', alignItems: 'center' }}>
+              <View style={{ backgroundColor: '#306BFF', width: 20, height: 20, borderRadius: 20/2 }}/>
+              <Text style={{ marginLeft: 5 }}>Giảng dạy</Text>
+            </View>
+            <View style={{ flexDirection:'row', alignItems: 'center' }}>
+              <View style={{ backgroundColor: '#33BFFF', width: 20, height: 20, borderRadius: 20/2 }}/>
+              <Text style={{ marginLeft: 5 }}>Nghiên cứu</Text>
+            </View>
+            <View style={{ flexDirection:'row', alignItems: 'center' }}>
+              <View style={{ backgroundColor: '#FF54EE', width: 20, height: 20, borderRadius: 20/2 }}/>
+              <Text style={{ marginLeft: 5 }}>Phục vụ</Text>
+            </View>
+          </View>
+
+          <View>
+            <BarChart
                 frontColor={'#306BFF'}
-                barWidth={22}
-                data={barData1}
+                data={barData}
                 spacing={30}
                 maxValue={50}
-                
-              />
-            </Card>
-            <Card containerStyle={styles.barChart}>
+                barWidth={12}
+                width={275}
+                labelWidth={20}
+                />
+          </View>
+            {/* <Card containerStyle={styles.barChart}>
             <Card.FeaturedTitle style={{ color: '#425166' }}>
                 Nghiên cứu
               </Card.FeaturedTitle>
@@ -174,8 +192,7 @@ export default function AnalyticScreen() {
                 maxValue={15}
                 
               />
-            </Card>
-          </ScrollView>
+            </Card> */}
           
         </Card>        
       </View>

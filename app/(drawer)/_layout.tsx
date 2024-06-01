@@ -8,6 +8,9 @@ import { useEffect } from 'react';
 import { useAuth } from '@/context/AuthProvider';
 import { Stack } from 'expo-router';
 
+// const image_link = 'https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/434154354_2268341086831283_3414945414992532512_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHQjFXfNz7NeQIKaFAm2lSb2VIZTY_bp1bZUhlNj9unViGzQCVIocpbZ794EG7HZMAInHaEiOpxhM_e35Is04Tk&_nc_ohc=16gTAvWUsTsQ7kNvgFQzJ6I&_nc_ht=scontent.fhan14-2.fna&oh=00_AYBy_y4TKmdZAT1URVVsaikJ9H1G7NE00dq-pqrfBNIHhA&oe=665E28B3'
+const image_link = 'https://soict.hust.edu.vn/wp-content/uploads/ta_hai_tung_vt_soict.jpg'
+
 interface CustomDrawerContentProps {}
 
 const CustomDrawerContent: React.FC<CustomDrawerContentProps> = (props) => {
@@ -19,15 +22,14 @@ const CustomDrawerContent: React.FC<CustomDrawerContentProps> = (props) => {
         console.log("?", user);
     }, [pathname]);
 
-    
-
     return (
     <DrawerContentScrollView {...props}>
         <View style={styles.userInfoWrapper}>
-            <Image source={{uri: 'https://soict.hust.edu.vn/wp-content/uploads/ta_hai_tung_vt_soict.jpg'}} width={80} height={80} style={styles.userImg}/>
+            {/* <Image source={{uri: 'https://soict.hust.edu.vn/wp-content/uploads/ta_hai_tung_vt_soict.jpg'}} width={80} height={80} style={styles.userImg}/> */}
+            <Image source={{ uri: image_link }} width={80} height={80} style={styles.userImg}/>
             <View style={styles.userDetailsWrapper}>
                 <Text style={styles.userName}>Ta Hai Tung</Text>
-                <Text style={styles.userEmail}>tung.tahai@hust.edu.vn</Text>
+                <Text style={styles.userEmail}>tung.th@hust.edu.vn</Text>
             </View>
         </View>
         <DrawerItem  
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
       },
       userEmail: {
-        fontSize:16,
+        fontSize:12,
         fontStyle: 'italic',
         textDecorationLine: 'underline',
       }
