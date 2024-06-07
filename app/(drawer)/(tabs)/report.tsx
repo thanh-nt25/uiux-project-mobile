@@ -2,6 +2,8 @@ import { StyleSheet, Image, Platform, Text, View, TouchableOpacity, Button, Shar
 import { PieChart } from 'react-native-gifted-charts';
 import { useState } from 'react';
 import { Dropdown } from 'react-native-element-dropdown';
+// import { Table, Row, Rows } from 'react-native-table-component';
+
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {Card} from '@rneui/themed';
@@ -83,15 +85,15 @@ export default function ReportScreen() {
           style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
           placeholderStyle={styles.placeholderStyle}
           selectedTextStyle={styles.selectedTextStyle}
-          inputSearchStyle={styles.inputSearchStyle}
+          // inputSearchStyle={styles.inputSearchStyle}
           iconStyle={styles.iconStyle}
           data={itemDropDown}
-          search
+          // search
           maxHeight={300}
           labelField="label"
           valueField="value"
           placeholder={!isFocus ? 'Chọn học kỳ' : '...'}
-          searchPlaceholder="Tìm kiếm học kỳ"
+          // searchPlaceholder="Tìm kiếm học kỳ"
           value={value}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -122,6 +124,9 @@ export default function ReportScreen() {
           <CardReport semester={semester}/>
           {/* details */}
           <Card containerStyle={{ flex: 1, marginTop: 5,borderRadius: 8, }}>
+            <Card.FeaturedTitle style={{ color: '#425166', fontSize: 20 }}>
+              Chi tiết điểm thành phần
+            </Card.FeaturedTitle>
             
           </Card>
         </View>
