@@ -223,7 +223,7 @@ const CardReport = ({semester} : {semester : Array<any>}) => {
               color: '#FF0000',
               marginBottom: 10 }}
             >
-              Hoàn thành tốt nhiệm vụ
+              {semester[0].evaluate}
             </Text>
 
             <Text style={{ fontSize: 15, color: '#425166', fontWeight: 'bold', marginBottom: 10 }}>

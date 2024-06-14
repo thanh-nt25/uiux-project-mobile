@@ -40,7 +40,7 @@ export default function GoalScreen() {
       </DataTable.Header> 
       <DataTable.Row> 
         <DataTable.Cell>Giảng dạy</DataTable.Cell> 
-        <DataTable.Cell>50</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>50</DataTable.Cell> 
         <DataTable.Cell>20</DataTable.Cell> 
         <DataTable.Cell>350 giờ/tuần</DataTable.Cell> 
       </DataTable.Row> 
@@ -69,7 +69,7 @@ export default function GoalScreen() {
 
       <DataTable.Row> 
         <DataTable.Cell>Nghiên cứu</DataTable.Cell> 
-        <DataTable.Cell>35</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>35</DataTable.Cell> 
         <DataTable.Cell>20</DataTable.Cell> 
         <DataTable.Cell>Hoàn thành định mức nghiên cứu</DataTable.Cell> 
       </DataTable.Row> 
@@ -92,7 +92,7 @@ export default function GoalScreen() {
 
       <DataTable.Row> 
         <DataTable.Cell>Phục vụ</DataTable.Cell> 
-        <DataTable.Cell>15</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>15</DataTable.Cell> 
         <DataTable.Cell>2</DataTable.Cell> 
         <DataTable.Cell>Tham gia tư vấn</DataTable.Cell> 
       </DataTable.Row> 
@@ -115,8 +115,8 @@ export default function GoalScreen() {
       <DataTable.Row> 
         
         <DataTable.Cell>Tổng điểm</DataTable.Cell> 
-        <DataTable.Cell>100</DataTable.Cell> 
-        <DataTable.Cell>100</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>100</DataTable.Cell> 
+        <DataTable.Cell >100</DataTable.Cell> 
         <DataTable.Cell></DataTable.Cell> 
       </DataTable.Row> 
 
@@ -139,92 +139,34 @@ export default function GoalScreen() {
       ))}*/}
     <DataTable style={{ marginTop: 10 }}> 
       <DataTable.Header style={styles.tableHeader}> 
-        <DataTable.Title>Tiêu chí</DataTable.Title> 
-        <DataTable.Title>Điểm KPIs</DataTable.Title> 
-        <DataTable.Title>Điểm</DataTable.Title> 
-        <DataTable.Title>Mô tả</DataTable.Title> 
+        <DataTable.Title style={{ justifyContent: 'center' }}>Xếp loại</DataTable.Title> 
+        <DataTable.Title style={{ justifyContent: 'center' }}>Điểm KPIs</DataTable.Title> 
       </DataTable.Header> 
-      <DataTable.Row> 
-        <DataTable.Cell>Giảng dạy</DataTable.Cell> 
-        <DataTable.Cell>50</DataTable.Cell> 
-        <DataTable.Cell>20</DataTable.Cell> 
-        <DataTable.Cell>350 giờ/tuần</DataTable.Cell> 
+
+
+      <DataTable.Row > 
+        <DataTable.Cell >Không hoàn thành nhiệm vụ</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}> 55 </DataTable.Cell> 
       </DataTable.Row> 
 
       <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>3</DataTable.Cell> 
-        <DataTable.Cell>Có đề cương giảng dạy theo quy định</DataTable.Cell> 
-      </DataTable.Row> 
-
-      <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>3</DataTable.Cell> 
-        <DataTable.Cell>Thực hiện xây dựng đề thi kiểm tra</DataTable.Cell> 
-      </DataTable.Row> 
-
-      <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>3</DataTable.Cell> 
-        <DataTable.Cell>Có đề cương giảng dạy theo quy định</DataTable.Cell> 
-      </DataTable.Row> 
-
-
-      <DataTable.Row> 
-        <DataTable.Cell>Nghiên cứu</DataTable.Cell> 
-        <DataTable.Cell>35</DataTable.Cell> 
-        <DataTable.Cell>20</DataTable.Cell> 
-        <DataTable.Cell>Hoàn thành định mức nghiên cứu</DataTable.Cell> 
-      </DataTable.Row> 
-
-
-      <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>5</DataTable.Cell> 
-        <DataTable.Cell>Công bố quốc tế</DataTable.Cell> 
-      </DataTable.Row> 
-
-      <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>5</DataTable.Cell> 
-        <DataTable.Cell>Tham dự hội thảo</DataTable.Cell> 
-      </DataTable.Row> 
-
-
-      <DataTable.Row> 
-        <DataTable.Cell>Phục vụ</DataTable.Cell> 
-        <DataTable.Cell>15</DataTable.Cell> 
-        <DataTable.Cell>2</DataTable.Cell> 
-        <DataTable.Cell>Tham gia tư vấn</DataTable.Cell> 
-      </DataTable.Row> 
-
-      <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>5</DataTable.Cell> 
-        <DataTable.Cell>Tham dự hội thảo</DataTable.Cell> 
-      </DataTable.Row> 
-
-      <DataTable.Row> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
-        <DataTable.Cell>5</DataTable.Cell> 
-        <DataTable.Cell>Tham dự hội thảo</DataTable.Cell> 
+        <DataTable.Cell>Hoàn thành nhiệm vụ</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>55-70</DataTable.Cell> 
       </DataTable.Row> 
 
 
       <DataTable.Row> 
         
-        <DataTable.Cell>Tổng điểm</DataTable.Cell> 
-        <DataTable.Cell>100</DataTable.Cell> 
-        <DataTable.Cell>100</DataTable.Cell> 
-        <DataTable.Cell></DataTable.Cell> 
+        <DataTable.Cell>Hoàn thành tốt nhiệm vụ</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>70-80</DataTable.Cell> 
       </DataTable.Row> 
+
+      <DataTable.Row> 
+        
+        <DataTable.Cell>Hoàn thành xuất sắc nhiệm vụ</DataTable.Cell> 
+        <DataTable.Cell style={{ justifyContent: 'center' }}>80-100</DataTable.Cell> 
+      </DataTable.Row> 
+
 
     </DataTable> 
       </Card>
